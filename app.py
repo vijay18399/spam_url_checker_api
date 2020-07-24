@@ -16,8 +16,8 @@ def predicter():
 			result = makepredictions(urls)
 			return jsonify(result),200
 		else:
-			msg = 'No Urls Found in Message'
-			return jsonify(msg),400
+			result= { 'msg' : 'No Urls Found in Message'}
+			return jsonify(result),400
 @app.route("/api/build", methods=['POST','GET'])
 def builder():
     score = performbuild()
